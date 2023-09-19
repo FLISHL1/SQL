@@ -1,5 +1,5 @@
 SELECT lastName, reportsTo FROM employees
-ORDER BY IF(reportsTo is NULL, -1, reportsTo);
+ORDER BY reportsTo;
 
 SELECT lastName, reportsTo FROM employees
-ORDER BY IF(reportsTo is NULL, -1, reportsTo) DESC;
+ORDER BY reportsTo DESC;

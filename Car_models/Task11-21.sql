@@ -9,7 +9,7 @@ WHERE jobTitle='Sales Rep' or officeCode='1'
 ORDER BY officeCode, jobTitle;
 
 SELECT lastName, firstName, officeCode FROM employees
-WHERE officeCode in ('1', '2', '3')
+WHERE officeCode BETWEEN '1' AND  '3'
 ORDER BY officeCode;
 
 SELECT lastName, firstName, officeCode FROM employees
