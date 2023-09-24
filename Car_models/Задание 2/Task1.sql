@@ -1,1 +1,0 @@
-SELECT CONCAT(lastName, ' ',firstName) as full_name FROM employees
