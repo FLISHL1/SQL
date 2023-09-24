@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="DBE_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file://$APPLICATION_CONFIG_DIR$/consoles/db/c6d5cfc8-e9a2-4753-925a-6e30e32524fd" />
     <content url="file://$MODULE_DIR$" />
-    <content url="file://$USER_HOME$/Desktop/Университет/3 семестр/SQL/Laba2" />
+    <content url="file://$MODULE_DIR$/../../SQL/Laba2" />
     <content url="file://$USER_HOME$/Downloads" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
