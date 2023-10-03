@@ -5,7 +5,8 @@ WHERE  jobTitle='Sales Rep'
 ORDER BY employeeNumber;
 
 
-SELECT * FROM orders JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber and orders.orderNumber=10123;
+SELECT * FROM orders
+    JOIN orderdetails ON orders.orderNumber = orderdetails.orderNumber and orders.orderNumber=10123;
 
 
 SELECT employeeNumber, customers.customerNumber FROM employees
