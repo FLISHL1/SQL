@@ -152,11 +152,55 @@ CALL GetDeliveryStatus(10100, @delivery);
 SELECT @delivery;
 
 # task10
-# DELIMITER $$
-# CREATE PROCEDURE loops(IN num int)
-# begin
-#
-# end $$
+DROP PROCEDURE loops;
+
+DELIMITER $$
+CREATE PROCEDURE loops(IN num int)
+begin
+    DECLARE i int;
+    SET i := num;
+    light_loop: LOOP
+        SET i := i + i/2 ;
+        if (i > 15) THEN LEAVE light_loop;
+        End IF;
+    end loop;
+    SELECT i;
+end $$
+DELIMITER ;
+CALL loops(1);
+
+
+# task11
+DROP PROCEDURE whiles;
+
+DELIMITER $$
+CREATE PROCEDURE whiles(IN num int)
+begin
+    DECLARE i int;
+    SET i := num;
+    while i <= 15 DO
+            SET i := i + i/2;
+        end WHILE ;
+    SELECT i;
+end $$
+DELIMITER ;
+CALL whiles(15);
+
+# task12
+DELIMITER $$
+CREATE PROCEDURE CheckCredit(inCustomerNumber int)
+sp: BEGIN
+DECLARE customerCount INT;
+SELECT COUNT(*) INTO customerCount FROM customers
+WHERE customerNumber = inCustomerNumber;
+IF customerCount = 0 THEN
+LEAVE sp;
+END IF;
+END$$
+DELIMITER ;
+
+CALL CheckCredit(108);
+
 
 
 # task13
@@ -185,3 +229,48 @@ END LOOP getEmail;
 CLOSE curEmail;
 END$$
 DELIMITER ;
+
+SET @emailList = '';
+CALL createEmailList(@emailList);
+SELECT @emailList;
+
+# task14
+DELIMITER $$
+CREATE PROCEDURE AddOrderItem(
+in orderNo int,
+in productCode varchar(45),
+in qty int,
+in price double,
+in lineNo int )
+BEGIN
+DECLARE C INT;
+SELECT COUNT(orderNumber) INTO C
+FROM orders
+WHERE orderNumber = orderNo;
+IF(C != 1) THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Order No not found in orders table';
+END IF;
+END$$
+DELIMITER ;
+
+CALL AddOrderItem(1, 123, 30, 51.2, 1);
+
+# task15
+DROP PROCEDURE addProduct;
+
+DELIMITER $$
+CREATE PROCEDURE AddProduct(
+in productCode varchar(15),
+in productname varchar(70)
+)
+BEGIN
+
+IF(productname is NULL) THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Order dont null';
+END IF;
+END$$
+DELIMITER ;
+
+CALL AddProduct('123', null);
