@@ -77,12 +77,40 @@ FROM flights_v
 GROUP BY aircrafts.model;
 
 -- task14
-SELECT COUNT(*) FROM tickets LEFT JOIN boarding_passes USING(ticket_no)
+SELECT COUNT(*)
+FROM tickets
+         LEFT JOIN boarding_passes USING (ticket_no)
 WHERE boarding_passes.ticket_no is NULL;
 
 -- task15
+SELECT *
+FROM ticket_flights
+         JOIN boarding_passes USING (ticket_no, flight_id)
+         JOIN flights USING (flight_id)
+WHERE ticket_flights.fare_conditions != (SELECT seats.fare_conditions
+                                         FROM seats
+                                         WHERE seats.aircraft_code
+                                             = flights.aircraft_code
+                                           AND seats.seat_no
+                                             = boarding_passes.seat_no);
 
-
+-- task16
+SELECT f.min_sum, f.max_sum, count(*)
+FROM bookings.bookings
+         RIGHT JOIN (VALUES (0.0, 100000.0),
+                            (100000.0, 200000.0),
+                            (200000.0, 300000.0),
+                            (300000.0, 400000.0),
+                            (400000.0, 500000.0),
+                            (600000.0, 7000000.0),
+                            (7000000.0, 800000.0),
+                            (800000.0, 900000.0),
+                            (10000000.0, 1100000.0),
+                            (11000000.0, 1200000.0),
+                            (12000000.0, 1300000.0)) AS f (min_sum, max_sum)
+ON total_amount > f.min_sum and total_amount < f.max_sum
+group by f.max_sum, f.min_sum
+ORDER BY min_sum;
 
 -- task17
 SELECT DISTINCT arrival_city
@@ -90,32 +118,58 @@ FROM routes
 WHERE departure_city in ('Москва', 'Санкт-Петербург');
 
 -- task18
-SELECT arrival_city FROM routes
+SELECT arrival_city
+FROM routes
 WHERE departure_city in ('Москва')
 INTERSECT
-SELECT arrival_city FROM routes
+SELECT arrival_city
+FROM routes
 WHERE departure_city in ('Санкт-Петербург');
 
 -- task19
-SELECT arrival_city FROM routes
+SELECT arrival_city
+FROM routes
 WHERE departure_city not in ('Москва')
 INTERSECT
-SELECT arrival_city FROM routes
+SELECT arrival_city
+FROM routes
 WHERE departure_city in ('Санкт-Петербург');
 
 -- task20
-SELECT COUNT(*) FROM routes
+SELECT COUNT(*)
+FROM routes
 WHERE departure_city in ('Москва');
 
 -- task21
-SELECT COUNT(*) FROM flights_v;
+SELECT COUNT(*)
+FROM flights_v;
 
 -- task22
-SELECT departure_city, COUNT(*) as count FROM routes
+SELECT departure_city, COUNT(*) as count
+FROM routes
 GROUP BY departure_city
 HAVING COUNT(*) >= 15;
 
 -- task23
-SELECT city, COUNT(*) FROM airports
+SELECT city, COUNT(*)
+FROM airports
 GROUP BY city
 HAVING COUNT(*) > 1;
+
+
+-- task24
+SELECT
+  book_ref,
+  book_date,
+  EXTRACT(MONTH FROM book_date) AS month,
+  EXTRACT(DAY FROM book_date) AS day,
+  SUM(count) OVER (PARTITION BY EXTRACT(MONTH FROM book_date) ORDER BY book_date) AS cumulative_count
+FROM (
+  SELECT
+    book_ref,
+    book_date,
+    COUNT(*) AS count
+  FROM bookings
+  GROUP BY book_ref, book_date
+) AS ticket_counts
+ORDER BY book_date;
