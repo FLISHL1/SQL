@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)http://localhost:63342/Color/Kmeans/Color/index.php?_ijt=8p7u7g0imrnoeaemr8raecsjps -->
+<html style="font-size: 16px;" lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Color</title>
+    <link rel="stylesheet" type="text/css" href="./Color_files/main.css" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Color_files/css2" rel="stylesheet">
+
+</head>
+
+<body>
+
+<main>
+    <table>
+        <thead>
+            <tr><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th>        </tr></thead>
+        <tbody>
+            <tr>
+                    <td><div style="background-color: rgb(0, 0, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(102, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(194, 3, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(15, 227, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 173, 122); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(26, 13, 245); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(128, 255, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 229, 41); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(97, 110, 196); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(64, 26, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(166, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 0, 128); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 224, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(153, 51, 204); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(115, 3, 235); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 153, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 128, 77); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 255, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 138, 128); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(128, 0, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(140, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 59, 33); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(3, 255, 122); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(163, 20, 250); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(54, 31, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(77, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(189, 255, 61); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 191, 41); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 46, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(184, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(10, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 120, 158); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(173, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 125, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(31, 250, 163); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 48, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 181, 41); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(38, 255, 204); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 10, 156); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(217, 255, 79); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(143, 255, 66); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 94, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 99, 33); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(46, 255, 178); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(128, 128, 128); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 0, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(38, 255, 171); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 133, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(219, 148, 112); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(89, 222, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 0, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 255, 128); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(173, 92, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 148, 0); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 112, 145); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(110, 115, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(15, 117, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(140, 36, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(0, 128, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(150, 0, 168); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(79, 255, 128); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 0, 222); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(97, 255, 224); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(224, 105, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr><tr>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    <td><div style="background-color: rgb(255, 255, 255); width: 50px; height: 50px;"></div></td>
+                    
+</tr>        </tbody>
+    </table>
+
+</main>
+
+
+
+
+</body></html>
