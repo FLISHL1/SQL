@@ -83,16 +83,16 @@ FROM tickets
 WHERE boarding_passes.ticket_no is NULL;
 
 -- task15
-SELECT *
+explain SELECT *
 FROM ticket_flights
-         JOIN boarding_passes USING (ticket_no, flight_id)
+         JOIN boarding_passes USING (flight_id ,ticket_no)
          JOIN flights USING (flight_id)
 WHERE ticket_flights.fare_conditions != (SELECT seats.fare_conditions
                                          FROM seats
                                          WHERE seats.aircraft_code
                                              = flights.aircraft_code
                                            AND seats.seat_no
-                                             = boarding_passes.seat_no);
+
 
 -- task16
 SELECT f.min_sum, f.max_sum, count(*)
@@ -111,6 +111,8 @@ FROM bookings.bookings
 ON total_amount > f.min_sum and total_amount < f.max_sum
 group by f.max_sum, f.min_sum
 ORDER BY min_sum;
+
+
 
 -- task17
 SELECT DISTINCT arrival_city
@@ -158,7 +160,7 @@ HAVING COUNT(*) > 1;
 
 
 -- task24
-SELECT
+EXPLAIN SELECT
   book_ref,
   book_date,
   EXTRACT(MONTH FROM book_date) AS month,
