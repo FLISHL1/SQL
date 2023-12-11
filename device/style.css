@@ -1,0 +1,21 @@
+table{
+    border-collapse: collapse;
+    margin: 25px;
+}
+
+
+table td{
+    border-width: 1px;
+    border-style: solid;
+    padding: 3px;
+    text-align: center;
+}
+
+table th{
+    border-width: 1px;
+    border-style: solid;
+    padding: 3px;
+    text-align: center;
+    background-color: orange;
+}
+

@@ -15,17 +15,24 @@
     <main>
         
         <?php
-        
+        session_start();
+        $_SESSION["user_id"] = null;
         if (isset($_POST['login']) && isset($_POST['password'])){
             include 'connectDB.php';
-            $query = "SELECT * FROM users
-            WHERE user_id = ".$_POST['login']." and  password =".$_POST['password']."";
-            $result = mysqli_query($mysql, $query);
+//            $query = "SELECT * FROM users WHERE user_id = ".$_POST['login']." and  password =".$_POST['password']."";
+            $query = "SELECT * FROM users WHERE login = ?";
+            $stmt = mysqli_prepare($mysql ,$query);
+            mysqli_stmt_bind_param($stmt, 's', $_POST['login']);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
             if (mysqli_num_rows($result) > 0){
-                session_start();
                 $row = mysqli_fetch_assoc($result);
-                $_SESSION["user_id"] = $row['user_id'];
-                header("Location: index.php");
+                if(password_verify($_POST["password"], $row["password"])){
+                    $_SESSION["user_id"] = $row['user_id'];
+                    header("Location: index.php");
+                } else{
+                    echo '<p>Неверный логин или пароль</p>';
+                }
             } else {
                 echo '<p>Неверный логин или пароль</p>';
             }
@@ -34,11 +41,10 @@
         ?>
 
 
-        <form>
+        <form method="POST">
             <input type="text" name="login"  class="input" placeholder="Логин">
             <input type="password" name="password"  class="input" placeholder="Пароль">
             <input type="submit" class="btn" value="Войти">
-            <input type="button" class="btn" id='reg' onClick="register();" value="Зарегистрироваться">
         </form>
     
     </main>
@@ -46,10 +52,4 @@
 
 </body>
 <script>
-
-
-function register(){
-    
-    window.location.replace('registration.php');;
-}
     </script>
