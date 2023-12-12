@@ -39,6 +39,8 @@ if (isset($_GET["ID"])) { //Если запрос от устройства со
                 mysqli_stmt_bind_param($stmt, 'i', $_GET["ID"]);
                 mysqli_stmt_execute($stmt);
                 $result = mysqli_stmt_get_result($stmt);
+                $date_today = date("Y-m-d H:i:s"); //текущее время
+
                 if (mysqli_num_rows($result) == 1) {
                     $query = "UPDATE TEMPERATURE_TABLE SET TEMPERATURE= ?, DATE_TIME='$date_today' WHERE DEVICE_ID = ?";
                     $stmt = mysqli_prepare($mysql, $query);
