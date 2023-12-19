@@ -38,6 +38,7 @@ if (isset($_POST["history"])) {
 
 
 ";
+    mysqli_stmt_execute()
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>
             <td>" .$row['type']. "</td>

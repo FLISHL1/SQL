@@ -77,13 +77,13 @@ FROM flights_v
 GROUP BY aircrafts.model;
 
 -- task14
-SELECT COUNT(*)
+EXPLAIN SELECT COUNT(*)
 FROM tickets
          LEFT JOIN boarding_passes USING (ticket_no)
 WHERE boarding_passes.ticket_no is NULL;
 
 -- task15
-explain SELECT *
+explain ANALYZE SELECT ticket_no, flight_id
 FROM ticket_flights
          JOIN boarding_passes USING (flight_id ,ticket_no)
          JOIN flights USING (flight_id)
@@ -91,7 +91,15 @@ WHERE ticket_flights.fare_conditions != (SELECT seats.fare_conditions
                                          FROM seats
                                          WHERE seats.aircraft_code
                                              = flights.aircraft_code
-                                           AND seats.seat_no
+                                          AND seats.seat_no = boarding_passes.seat_no);
+
+-- Исправлено на такое
+
+explain ANALYZE SELECT ticket_no, flight_id
+FROM ticket_flights JOIN boarding_passes USING (ticket_no, flight_id)
+JOIN seats USING (seat_no)
+JOIN flights USING  (flight_id, aircraft_code)
+WHERE seats.fare_conditions != ticket_flights.fare_conditions;
 
 
 -- task16
